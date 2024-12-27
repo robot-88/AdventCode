@@ -1,13 +1,15 @@
-import { locationID1, locationID2 } from "./List.js";
+//import { locationID1, locationID2 } from "./List.js";
 
 let leftSideLocationID = [];
 let rightSideLocationID = [];
 
 const distanceCalculation = (args0, args1) => {
-  const sortedArray1 = [...args0].sort((a, b) => {
+  args0 =[];
+  args1 =[];
+  const sortedArray1 = args0.sort((a, b) => {
     return a - b;
   });
-  const sortedArray2 = [...args1].sort((a, b) => {
+  const sortedArray2 = args1.sort((a, b) => {
     return a - b;
   });
   if (sortedArray1.length != sortedArray2.length)
@@ -24,8 +26,17 @@ const distanceCalculation = (args0, args1) => {
       (partialSum, a) => partialSum + a,
       0
     );
-    console.log("sum", sum);
+    return sum;
   }
 };
 
-distanceCalculation(locationID1, locationID2);
+
+
+// Example location ID arrays
+const locationID1 = [3, 4, 2, 1, 3, 3];
+const locationID2 = [4, 3, 5, 3, 9, 3];
+
+// Calculate the distance and log the result
+const valueArray = distanceCalculation(locationID1, locationID2);
+console.log('data', valueArray);
+
